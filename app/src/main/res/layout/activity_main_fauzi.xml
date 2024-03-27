@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E9ECF1"
+
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/et_style2"
+        android:gravity="center"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="Kalkulator Tip"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/text_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Biaya Layanan"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/input_tip"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
+        />
+
+    <EditText
+        android:id="@+id/input_tip"
+        android:layout_width="265dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:text="Rp. 20.000"
+        android:background="@drawable/et_style"
+        app:layout_constraintBottom_toTopOf="@id/text_tanya"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_input"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
+
+    <TextView
+        android:id="@+id/text_tanya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:text="Bagaimana Layanan Kami :"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_tip" />
+
+    <RadioGroup
+        android:id="@+id/tip_pilihan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:checkedButton="@id/option_twenty_percent"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_tanya">
+
+        <RadioButton
+            android:id="@+id/option_twenty_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amazing (20%)"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/option_eighteen_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Good (15%)"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/option_fifteen_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ok (10%)"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+    <Switch
+        android:id="@+id/switch_bulatkan"
+        android:layout_width="355dp"
+        android:layout_height="29dp"
+        android:background=""
+        android:checked="true"
+        android:text="Bulatkan Total Tip"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/tip_pilihan"
+        app:layout_constraintTop_toBottomOf="@id/tip_pilihan" />
+
+    <Button
+        android:id="@+id/button_tip"
+        android:layout_width="331dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#FF9800"
+        android:text="Hitung Total Tip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/switch_bulatkan" />
+
+    <ImageView
+        android:id="@+id/gambar_hasil"
+        android:layout_width="128dp"
+        android:layout_height="112dp"
+        android:src="@drawable/pil2"
+        app:layout_constraintBottom_toTopOf="@id/input_tip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toEndOf="@id/tip_pilihan"
+        app:layout_constraintTop_toBottomOf="@id/switch_bulatkan"
+        app:layout_constraintVertical_bias="0.463" />
+
+    <LinearLayout
+        android:id="@+id/hasil_layout"
+        android:layout_width="286dp"
+        android:layout_height="54dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/et_style"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_tip"
+        app:layout_constraintVertical_bias="0.041">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="Total Tip : "
+            android:textSize="18dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="Rp. 20.000"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
